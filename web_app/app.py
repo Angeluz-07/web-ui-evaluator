@@ -54,6 +54,7 @@ def preprocess_image(
 ):
     img = PIL_img.resize((img_width, img_height), Image.ANTIALIAS)
     img_tensor = _image.img_to_array(img)                   # (height, width, channels)
+    img_tensor = img_tensor[..., :3]
     img_tensor = np.expand_dims(img_tensor, axis=0)         # (1, height, width, channels), add a dimension because the model expects this shape: (batch_size, height, width, channels)
     img_tensor /= 255.                                      # imshow expects values in the range [0, 1]
     return img_tensor
