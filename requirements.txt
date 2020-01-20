@@ -1,0 +1,6 @@
+Flask
+tensorflow==1.15
+Keras
+Keras-Preprocessing
+Pillow
+flake8

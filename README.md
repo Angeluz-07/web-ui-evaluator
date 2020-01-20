@@ -6,4 +6,6 @@
 - `.venv\Scripts\activate.bat`
 - `pip install -r requirements.txt`
 
-## Example usage
+## Example usage in Windows
+- `set FLASK_APP=web_app/app.py`
+- `flask run`
