@@ -1,5 +1,5 @@
 Flask
-tensorflow==1.15
+tensorflow==1.15.2
 Keras
 Keras-Preprocessing
 Pillow
