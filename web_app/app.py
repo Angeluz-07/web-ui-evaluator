@@ -52,7 +52,7 @@ def preprocess_image(
     img_height=IMG_HEIGHT,
     img_width=IMG_WIDTH
 ):
-    img = PIL_img.resize((img_width, img_height), Image.ANTIALIAS)
+    img = PIL_img.resize((img_width, img_height), Image.Resampling.LANCZOS)
     img_tensor = _image.img_to_array(img)                   # (height, width, channels)
     img_tensor = img_tensor[..., :3]
     img_tensor = np.expand_dims(img_tensor, axis=0)         # (1, height, width, channels), add a dimension because the model expects this shape: (batch_size, height, width, channels)
@@ -65,9 +65,6 @@ def preprocess_image(
     ref : https://github.com/tensorflow/tensorflow/issues/28287
 """
 
-sess = tf.Session()
-graph = tf.get_default_graph()
-set_session(sess)
 model = load_model('models/v2/ui_evaluator_100_epochs.h5', custom_objects={'F1': F1 })
 
 
@@ -86,12 +83,8 @@ def predict():
         preprocessed_img = preprocess_image(pill_img)
         print(':: Preprocessed the image to feed into predict method')
 
-        global sess
-        global graph
-        with graph.as_default():
-            set_session(sess)
-            prediction = model.predict(preprocessed_img)
-            print(':: Got Predicted results')
+        prediction = model.predict(preprocessed_img)
+        print(':: Got Predicted results')
 
         return {
             'appealing_contrast': json.dumps(prediction[0][0].item()),
