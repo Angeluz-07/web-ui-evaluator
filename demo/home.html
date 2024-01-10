@@ -1,0 +1,75 @@
+<html>
+	<head>
+
+		<!--tensorflowjs from cdn-->
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+
+		<!-- tag for responsive behaviour. See on google for more info-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">	
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="static/css/Chart.min.css">
+	</head>
+	
+	<body>
+		<div class="container" id="app">
+			<div class="row my-2">
+			
+				<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<h3> Web UI evaluator </h3>
+					</div>					
+				</div>
+				</div>
+			</div>
+			<div class="row my-2">
+				<div class="col">
+				<div class="card">
+					<div class="card-body">
+						<form v-on:submit.prevent="updatePrediction()">
+							<div class="form-group">
+								<div class="custom-file">
+									<input type="file" class="custom-file-input" id="customFile" @change="onUploadImage">
+									<label class="custom-file-label" for="customFile">Choose file</label>
+								</div>
+							</div>
+							<div class="form-group text-center">							
+								<button type="submit" class="btn btn-success">Evaluate</button>
+							</div>
+						</form>		
+					</div>					
+				</div>
+				</div>
+			</div>
+				
+			<div class="row mb-4 mt-2">
+				<div class="col-6">
+					<div class="card h-100">
+						<div class="card-body">
+							<img :src="this.currentImage" class="rounded" width=500/>
+						</div>					
+					</div>
+				</div>
+				<div class="col-6">					
+					<div class="card h-100">
+						<div class="card-body">
+							<canvas id="results"></canvas>
+						</div>					
+					</div>
+				</div>
+			</div>		
+			
+		</div>
+	
+	</body>
+	
+	
+	<script src="static/js/jquery.min.js"></script>	
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/axios.min.js"></script>
+	<script src="static/js/ramda.min.js"></script>	
+	<script src="static/js/vue.min.js"></script>	
+	<script src="static/js/Chart.min.js"></script>
+	<script src="static/js/app.js"></script>
+
+</html>
