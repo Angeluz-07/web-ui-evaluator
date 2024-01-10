@@ -1,6 +1,7 @@
 # Web UI evaluator
-
 Project for the course of Artificial Intelligence, initially developed in January, 2020
+
+(_Updated in 2024_) : Updated with a better description and with latest version of libraries.
 ## Description
 Web application to classify web user interfaces into three classes:
 - appealing contrast
