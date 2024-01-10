@@ -8,6 +8,11 @@ Web application to classify web user interfaces into three classes:
 - visual load
 
 The app uses a keras model trained to classify web UIs screenshots. The webapp allows to upload an image and show the probability to belong to one of the three classes.
+## Examples
+### Results
+![one](https://github.com/Angeluz-07/web-ui-evaluator/blob/master/example_results.jpg)
+### Usage
+![two](https://github.com/Angeluz-07/web-ui-evaluator/blob/master/example_usage.jpg)
 
 ## Set new environment
 ### on Windows
