@@ -1,4 +1,12 @@
 
+//const modelUrl = 
+//const model = await tf.loadLayersModel('https://github.com/Angeluz-07/web-ui-evaluator/blob/master/demo/static/model.json');
+// Function to load a TensorFlow.js model
+async function loadModel(path) {
+    return await tf.loadLayersModel(path);  // Load the model from the given path
+}
+
+const model = loadModel('model.json'); // Replace 'yourPath' with the path to your model
 var app = new Vue({        
     delimiters: ['[[', ']]'],  
     el: '#app',
