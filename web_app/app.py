@@ -1,15 +1,9 @@
+import json
+
 from flask import Flask
 from flask import render_template, request
 
-import json
-
-import keras_preprocessing.image as _image
-import tensorflow as tf
-from keras import backend as K
-from keras.backend import set_session
-from keras.models import load_model
 from PIL import Image
-import numpy as np
 from services.UIEvaluatorService import preprocess_image, model
 
 app = Flask(__name__)
